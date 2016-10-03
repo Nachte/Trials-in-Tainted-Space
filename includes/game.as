@@ -1802,6 +1802,9 @@ public function processTime(arg:int):void {
 
 	//Queue up procs for boobswell shit
 	if (pc.hasStatusEffect("Boobswell Pads")) boobswellStuff(arg);
+	
+	//Queue up procs for pump up
+	if (pc.hasStatusEffect("Pump Up Cream")) pumpUpTimer(arg);
 
 	//Laneshit
 	processLaneDetoxEvents(arg);

@@ -8996,6 +8996,26 @@
 			cocks[cocks.length - 1].cLengthRaw = clength;
 			return true;
 		}
+		public function copyCock(target:int, donor:int):void
+		{
+			if(target < 0 || donor < 0) return;
+			if(target >= cocks.length || donor >= cocks.length) return;
+			cocks[target].cType = cocks[donor].cType;
+			cocks[target].cLengthRaw = cocks[donor].cLengthRaw;
+			cocks[target].cLengthMod = cocks[donor].cLengthMod;
+			cocks[target].cThicknessRatioRaw = cocks[donor].cThicknessRatioRaw;
+			cocks[target].cThicknessRatioMod = cocks[donor].cThicknessRatioMod;
+			cocks[target].cockColor = cocks[donor].cockColor;
+			cocks[target].knotMultiplier = cocks[donor].knotMultiplier;
+			cocks[target].flaccidMultiplier = cocks[donor].flaccidMultiplier;
+			cocks[target].virgin = cocks[donor].virgin;	//to make it work in a similar fashion as copyVagina
+			for(var y:int = 0; y < cocks[donor].cockFlags.length; y++)
+			{
+				cocks[target].cockFlags[y] = cocks[donor].cockFlags[y];
+			}
+			trace("Copying " + simpleCockNoun(donor) + " to donor " + simpleCockNoun(target) + " donor index: " + donor + " target index: " + target + " donor type: " + cocks[donor].cType + " target type: " + cocks[target].cType);
+			return;
+		}
 		public function createCockUnlocked(numCocks:int = 1):Boolean
 		{
 			if (numCocks > 10) return false;
@@ -16340,6 +16360,11 @@
 									kGAMECLASS.eventBuffer += "\n\n" + kGAMECLASS.logTimeStamp() + " Unfortunately, as you admire your now-larger bosom, you realize that the gentle, wet rumble of the pads has come to a stop. <b>It looks like you’ve exhausted the BoobSwell Pads";
 									if(bRows() > 1) kGAMECLASS.eventBuffer += "on your " + kGAMECLASS.num2Text2((statusEffects[x] as StorageClass).value1+1) + " row of breasts";
 									kGAMECLASS.eventBuffer += ParseText("!</b> You peel them off your [pc.skinFurScales] and toss them away.");
+									break;
+								//Pump up ends
+								case "Pump Up Cream":
+									//Message text, last boob size increase. 7 days later.
+									kGAMECLASS.eventBuffer += "\n\n You feel exhausted but the workout PUMP UP! has given you is showing off its results. <b>Your body is now more toned than before!</b> As you touch your [pc.chest], the dry sheen begins to peel off. <b>It looks like the cream has expired.</b> You scrape off the membrane still covering your [pc.skinFurScales], flaking into dust as it falls away.";
 									break;
 								//Treatment finishing.
 								case "The Treatment":

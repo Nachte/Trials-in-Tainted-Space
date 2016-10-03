@@ -762,3 +762,34 @@ public function buttslutBootyGrow():void
 	}
 }
 
+/* Tone stuff */
+public function pumpUpTimer(time:Number = 0):void {
+	//Message text, tone+. Every 6 hours or so.
+	//Every minute = .006 tone, rating += 2,16 tone every 6 hours, and 26 tone in 3 days total
+	
+	//retrieve the tone pc had when pump up was applied
+	var startTone: Number = 0;
+	var counter: Number = pc.statusEffects.length;
+	while (counter > 0) {
+		counter--;
+		if (pc.statusEffects[counter].storageName == "Pump Up Cream") startTone = pc.statusEffects[counter].value1;
+	}
+
+	//Use x to hold the current value for later comparison.
+	var x:int = pc.tone;
+	trace("PumpUp! Original tone: " + x);
+	trace("Time: " + time + " Amount grown from time: " + (time * 0.003));
+	
+	//Actually change it
+	pc.tone += time * 0.003;
+	//make sure pc tone doesn't go out of bound
+	if (pc.tone > 100) pc.tone = 100;
+	trace("PumpUp! new tone: " + pc.tone);
+	
+	//print message if tone reaches the next full point or more, and not last message
+	if(Math.floor(pc.tone) > Math.floor(x) && Math.ceil(pc.tone - startTone) < 26) {
+		trace("PUMPUP OUTPUT TRIGGERED");
+		eventBuffer += "\n\n" + logTimeStamp("passive") + " You feel exhausted but the workout PUMP UP! has given you is showing off its results. <b>Your body is now more toned than before!</b>";
+	}
+}
+

@@ -270,6 +270,16 @@ public function availableFaps(roundTwo:Boolean = false):Array
 		fap.ignoreRandomSelection = true;
 		faps.push(fap);
 	}
+	
+	//Pump up cream. 
+	if(pc.hasStatusEffect("Pump Up Cream")) 
+	{
+		fap = new FapCommandContainer();
+		fap.text = "Remove P.Up";
+		fap.func = removePumpUpCream;
+		fap.ignoreRandomSelection = true;
+		faps.push(fap);
+	}
 
 	if (hasGooArmor())
 	{
@@ -1588,6 +1598,16 @@ public function removeBoobswellPads():void
 	author("Fenoxo");
 	pc.removeStatusEffect("Boobswell Pads");
 	output("You peel the pads off your chest and breathe a sigh of relief now that the constant moisture and vibration is no longer rubbing at your [pc.nipples].\n\n<b>The boobswell pads shut down, their use expended.</b>");
+	clearMenu();
+	addButton(0,"Next",mainGameMenu);
+}
+
+public function removePumpUpCream():void
+{
+	clearOutput();
+	author("Lashcarge");
+	pc.removeStatusEffect("Pump Up Cream");
+	output("You scratch off the shiny membrane covering your body and shudder at the sudden coolness of your now exposed [pc.skinFurScales].\n\n<b>The crusts of PUMP UP! fall on the ground, no longer in a usable form.</b>");
 	clearMenu();
 	addButton(0,"Next",mainGameMenu);
 }

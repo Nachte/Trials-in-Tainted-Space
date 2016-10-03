@@ -4,6 +4,8 @@ package classes.Characters
 	import classes.GLOBAL;
 	import classes.Items.Apparel.BullsJockstrap;
 	import classes.Items.Apparel.Undershirt;
+	import classes.Items.Miscellaneous.PumpUp;
+	import classes.Items.Miscellaneous.Virection;
 	import classes.Items.Transformatives.Equilicum;
 	import classes.Items.Transformatives.SaltyJawBreaker;
 	import classes.Items.Transformatives.SweetSweat;
@@ -35,6 +37,8 @@ package classes.Characters
 			this.inventory.push(new Equilicum());
 			this.inventory.push(new SweetSweat());
 			this.inventory.push(new SaltyJawBreaker());
+			this.inventory.push(new PumpUp());
+			this.inventory.push(new Virection());
 			
 			this.armor.defense = 50;
 			this.physiqueRaw = 3;
