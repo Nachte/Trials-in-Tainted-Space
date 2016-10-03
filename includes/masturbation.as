@@ -1605,7 +1605,7 @@ public function removeBoobswellPads():void
 public function removePumpUpCream():void
 {
 	clearOutput();
-	author("Lashcarge");
+	author("Lashcharge");
 	pc.removeStatusEffect("Pump Up Cream");
 	output("You scratch off the shiny membrane covering your body and shudder at the sudden coolness of your now exposed [pc.skinFurScales].\n\n<b>The crusts of PUMP UP! fall on the ground, no longer in a usable form.</b>");
 	clearMenu();
