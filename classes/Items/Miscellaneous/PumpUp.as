@@ -88,7 +88,7 @@ package classes.Items.Miscellaneous
 							if (target.hasLowerGarment()) output(", leaving only the [pc.lowerUndergarment]");
 							output(" and let the whole world admire your herculean frame.");
 						}
-						output(" Easily opening the jar, you grab a large dollop of cream and slide it over your arms, massaging the biceps to make sure they receive a good coating. More cream and more massaging covers your [pc.fullChest], impressive six-pack and muscular back. Crouching down, you slather your quads, thighs, glutes, calves and feet, and use the last of the cream to cover your neck and jaw. It quickly dries, leaving you covered in a thin membrane that makes you look like you are permanently oiled.");
+						output(" Easily opening the jar, you grab a large dollop of cream and slide it over your arms, massaging the biceps to make sure they receive a good coating. More cream and more massaging covers your [pc.fullChest], impressive six-pack, and muscular back. Crouching down, you slather your quads, thighs, glutes, calves, and feet, and use the last of the cream to cover your neck and jaw. It quickly dries, leaving you covered in a thin membrane that makes you look like you are permanently oiled.");
 
 					//tone less than 75 and thickness 75+
 					} else if (target.tone < 75 && target.thickness >= 75) {
@@ -97,7 +97,7 @@ package classes.Items.Miscellaneous
 							if (target.hasUpperGarment()) output(" down to your [pc.lowerUndergarment]");
 							output(" and expose your generous mass for the whole world to see.");
 						}
-						output(" It takes a lot of effort to open the stuck lid, your plump body jiggling with every attempt, before it finally snaps open. You dip your fingers into the cream and slather it all over your [pc.skinFurScales], making sure to get those hard-to-reach places and under your folds of fat. It quickly dries off leaving you covered in a thin membrane that makes you look like you are permanently oiled.");
+						output(" It takes a lot of effort to open the stuck lid, your plump body jiggling with every attempt before it finally snaps open. You dip your fingers into the cream and slather it all over your [pc.skinFurScales], making sure to get those hard-to-reach places and under your folds of fat. It quickly dries off leaving you covered in a thin membrane that makes you look like you are permanently oiled.");
 					//both tone and thickness less than 75
 					} else {
 						output(" You ");
@@ -110,14 +110,14 @@ package classes.Items.Miscellaneous
 						if(!(target.hasArmor() || target.hasUpperGarment()) && target.hasLowerGarment()) output(", with only your [pc.lowergarments] on,");
 						
 						output(" so everyone can see your " + target.allChestDesc() + " and [pc.belly].");
-						output(" The jar is difficult to open, but with a strong grip, some quick twists and quite a few tries later, you can slather the creamy product all over your [pc.skinFurScales]. It quickly dries, leaving you covered in a thin membrane that makes you look like you’re soaked in oil.");
+						output(" The jar is difficult to open, but with a strong grip, some quick twists, and quite a few tries later, you can slather the creamy product all over your [pc.skinFurScales]. It quickly dries, leaving you covered in a thin membrane that makes you look like you’re soaked in oil.");
 					}
 				}
 				//apply statuseffect and store current tone in the first value
 				target.createStatusEffect("Pump Up Cream", target.tone, 0, 0, 0, false, "Pill", "Your chest is covered by a thin membrane of PUMP UP!, its microsurgeons working hard on improving your muscle mass. You will have to remove it before you can apply another dose.  You can remove it at any point via the \"Remove P.Up\" command in the \"Masturbation\" menu, but the cream will still be consumed. It's one use only.", false, 4320, 0xB793C4);
 				
 			} else {
-				kGAMECLASS.output(target.capitalA + target.short + " uses the pads, but nothing happens.");
+				kGAMECLASS.output(target.capitalA + target.short + " uses the cream, but nothing happens.");
 			}
 			return false;
 		}
