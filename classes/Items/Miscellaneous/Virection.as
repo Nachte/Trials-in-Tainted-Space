@@ -32,7 +32,7 @@ package classes.Items.Miscellaneous {
 			
 			this.description = "a small box containing a single Virection pill";
 			
-			this.tooltip = "Virection was originally developed and marketed by a small company as a phalic enlargement and virility enhancer, but due to a glitch in production it caused some of its consumers to spontaneously grow disfigured penises. In order to survive the subsequent legal action by disgruntled customers it sold the patent to Tamami Corp. They reworked the product and stabilized the glitch so that penile growth became a feature rather than an error. This product is in constant high demand, suffering through many changes in price and name, like CockUp, Penismightier and the BigD.\n\n The microsurgeons and chemicals in this blue pill are advertised to solve a myriad of problems related to male genitalia or lack of them. This product will always grow a penis if its consumer lacks one and has small chance of growing an extra one if they already have one. Otherwise it will increase the length or thickness of a penis or improve their virility.";
+			this.tooltip = "Virection was originally developed and marketed by a small company as a phallic enlargement and virility enhancer, but due to a glitch in production, it caused some of its consumers to spontaneously grow disfigured penises. In order to survive the subsequent legal action by disgruntled customers, it sold the patent to Tamami Corp. They reworked the product and stabilized the glitch so that penile growth became a feature rather than an error. This product is in constant high demand, suffering through many changes in price and name, like CockUp, Penismightier, and the BigD.\n\n The microsurgeons and chemicals in this blue pill are advertised to solve a myriad of problems related to male genitalia or lack of them. This product will always grow a penis if its consumer lacks one and has a small chance of growing an extra one if they already have one. Otherwise, it will increase the length or thickness of a penis or improve their virility.";
 			
 			TooltipManager.addTooltip(this.shortName, this.tooltip);
 			
@@ -118,12 +118,12 @@ package classes.Items.Miscellaneous {
 		}
 		
 		private function _growFirstCock(target:Creature):void {
-			output("\n\nYour heart starts beating much faster as your body heats up and you begin to sweat. After a few moments your entire body is drenched and your veins are visibly throbbing; almost like they are going to burst. You're both exhausted and uncomfortable as a new rippling sensation manifests in your [pc.crotch], so you decide it's best to sit down.");
+			output("\n\nYour heart starts beating much faster as your body heats up and you begin to sweat. After a few moments, your entire body is drenched and your veins are visibly throbbing; almost like they are going to burst. You're both exhausted and uncomfortable as a new rippling sensation manifests in your [pc.crotch], so you decide it's best to sit down.");
 			output("\n\nSlowly, you can feel the palpitations all over your body dissipating, except for those on your crotch, which is turning reddish with the excess blood pooling there. Seems like the microsurgeons were collecting blood from the rest of your body. The throbbing continues until a tiny lump begins to form");
 			if(target.hasLowerGarment()) output(" inside your [pc.lowerGarments]");
 			else output(" on your [pc.crotch]");
 			if(target.hasVagina()) output(" just above your vagina");
-			output(". You touch the ever-expanding length and feel a wave of ecstasy assault your body and can't help yourself but to start masturbating with the transformation still going. After the cockhead twists into shape, a sudden dribble of pre-cum emerges from the newly-formed urethra, slipping between your fingers, slicking them and your lenght and making the masturbation alot easier. It doesn't take long after that to reach your orgasm, ejaculating a few meager, pathetic strings onto your [pc.belly] and taking a few breaths as you revel in your afterglow.");
+			output(". You touch the ever-expanding length and feel a wave of ecstasy assault your body and can't help yourself but to start masturbating with the transformation still going. After the cockhead twists into shape, a sudden dribble of pre-cum emerges from the newly-formed urethra, slipping between your fingers, slicking them and your length and making the masturbation a lot easier. It doesn't take long after that to reach your orgasm, ejaculating a few meager, pathetic strings onto your [pc.belly] and taking a few breaths as you revel in your afterglow.");
 			
 			//grow new cock
 			target.cocks[0] = new CockClass();
@@ -154,7 +154,7 @@ package classes.Items.Miscellaneous {
 				output(" Your [pc.cockColor], veiny cock has a tapered head and a knot like");
 				if (InCollection(target.race(), "ausar", "half-ausar")) output(" an ausar's");
 				else if (InCollection(target.race(), "vulpine-morph", "vulpine-taur", "kitsune", "kitsune-morph", "kitsune-taur")) output(" a fox's");
-				else output(" canine's");
+				else output("a canine's");
 			
 			//if some kind of keirith, feline, neko, chakat variant
 			} else if (InCollection(target.race(), "kaithrit", "half-kaithrit", "feline-morph", "feline-taur", "nekomata", "nekomata-taur", "chakat")) {
@@ -178,7 +178,7 @@ package classes.Items.Miscellaneous {
 			
 			// some kind of dragon, fafnir variant
 			} if(InCollection(target.race(), "fanfir", "dragon-morph", "dragon-taur", "dragonne", "dragonne-taur")) {
-				output(" Your [pc.cockColor] dick is tapered with a knot like bulb at its base");
+				output(" Your [pc.cockColor] dick is tapered with a knot-like bulb at its base");
 			
 			//if syndian
 			} else if(target.race() == "sydian") {
@@ -194,7 +194,7 @@ package classes.Items.Miscellaneous {
 			
 			//future variant if some kind of anemone or siren cock is added to the game
 			} else if(InCollection(target.race(), "anemone", "siren")) {
-				output(" Your [pc.cockColor]-colored cock is covered in tentacles riddled with poisonous aphrodisiac");
+				output(" Your [pc.cockColor]-colored cock is covered in tentacles riddled with a poisonous aphrodisiac");
 			
 			//if kangaroo
 			} else if(target.race() == "kangaroo-morph") {
@@ -230,7 +230,7 @@ package classes.Items.Miscellaneous {
 			
 			//if some form of gryvain variant
 			} else if(InCollection(target.race(), "gryvain", "half-gryvain")) {
-				output("Your dick is knoted at the base, ribbed along the shaft, and covered in [pc.cockColor] scales");
+				output("Your dick is knotted at the base, ribbed along the shaft, and covered in [pc.cockColor] scales");
 				
 			//for humans
 			} else {
@@ -253,8 +253,8 @@ package classes.Items.Miscellaneous {
 			if (target.legs.length > 1) output(" legs");
 			else output(" [pc.leg]");
 			output(" fail you. Gently, you rub your sore bum, but stop when you realize you're already stroking your rock-hard member with the other hand.");
-			output("\n\nYou follow suit by wrapping your other hand around its growing girth and resume stroking. The prickly ripples feel amazing, specially when pressed against the shaft by your firm grip. Your [pc.cockHead] grows hotter as the ripples intensify there and pre-cum begins to copiously stream down from its slit... its two slits?");
-			output("\n\nBut before you can pay any mind to your swollen [pc.cockHead], the waves of lust climbing through your shaft grow stronger with each second. Your hands can barely contain its newfound girth, already twice its original size. A tiny gap forms between the cumslits, before splitting into two cockheads on top of your extremely engorged shaft. The undulations slow down as the gap grows wider and your sole cock divides into two. With one on each hand you languidly pump them up and down until you orgasm, coating your hands in [pc.cum]. You wipe your fingers clean, finishing <b>just as they fully separate into two identical [pc.cocks]!</b>");
+			output("\n\nYou follow suit by wrapping your other hand around its growing girth and resume stroking. The prickly ripples feel amazing, especially when pressed against the shaft by your firm grip. Your [pc.cockHead] grows hotter as the ripples intensify there and pre-cum begins to copiously stream down from its slit... its two slits?");
+			output("\n\nBut before you can pay any mind to your swollen [pc.cockHead], the waves of lust climbing through your shaft grow stronger with each second. Your hands can barely contain its newfound girth, already twice its original size. A tiny gap forms between the cumslits, before splitting into two cockheads on top of your extremely engorged shaft. The undulations slow down as the gap grows wider and your sole cock divides into two. With one on each hand, you languidly pump them up and down until you orgasm, coating your hands in [pc.cum]. You wipe your fingers clean, finishing <b>just as they fully separate into two identical [pc.cocks]!</b>");
 			
 			target.orgasm();
 		}
@@ -264,7 +264,7 @@ package classes.Items.Miscellaneous {
 			if (target.cocks.length == 2) output(" pair");
 			else output(" collection");
 			output(" of [pc.cocks]. The shafts answer back by becoming harder than ever before, pre-cum copiously gushing from the slits. Whatever semblance of resistance you had disappears, as you wrap each of your hands around their slickened girths.");
-			output("\n\nYou barely manage to remain standing as you start thrusting into your hands, drool slipping from your [pc.lips] and ecstasy flooding throughout your body. Your knees begin to weaken, but you steel yourself, pushing your [pc.hips] ever harder into your hands. You continue thrusting as the lowest of your dicks begins to swell within your grasp, a tiny gap forming in the base of your bottom [pc.cock " + (lastIndex + 1) + "]. It’s splitting in half! Your left hand leaves your other dicks to help the right with stroking your bloated organ. You even slip a finger into the gap, probing its sensitive insides. Cum flows through the dual cum - veins, before joining together and shooting out from the single, conjoined cockhead, straining the slit with a shot twice as large as you are used to. Suddenly, your [pc.cockHead " + (lastIndex + 1) + "] snaps apart in two, slinging jizz at your [pc.hair] and [pc.feet].");
+			output("\n\nYou barely manage to remain standing as you start thrusting into your hands, drool slipping from your [pc.lips] and ecstasy flooding throughout your body. Your knees begin to weaken, but you steel yourself, pushing your [pc.hips] ever harder into your hands. You continue thrusting as the lowest of your dicks begins to swell within your grasp, a tiny gap forming in the base of your bottom [pc.cock " + (lastIndex + 1) + "]. It’s splitting in half! Your left-hand leaves your other dicks to help the right with stroking your bloated organ. You even slip a finger into the gap, probing its sensitive insides. Cum flows through the dual cum - veins, before joining together and shooting out from the single, conjoined cockhead, straining the slit with a shot twice as large as you are used to. Suddenly, your [pc.cockHead " + (lastIndex + 1) + "] snaps apart in two, slinging jizz at your [pc.hair] and [pc.feet].");
 			output("\n\n<b>You’ve got " + (target.cocks.length+1) + " cocks now.</b> You clean yourself, hoping to find a mate with enough holes that can take you in... or at least someone with a gaped enough one for all of them.");
 			
 			//get last cock index
@@ -290,7 +290,7 @@ package classes.Items.Miscellaneous {
 				output("\n\nYour smaller-than-average [pc.cock " + randomCockIndex + "] grows warm and quickly stiffens into a firm, throbbing erection. You");
 				if(target.hasLowerGarment()) output(" slip a hand into your [pc.lowerGarments]");
 				else output(" stare down at your crotch");
-				output(", grab your rock hard dick and give it a few languid strokes. It fills with blood as it grows within your grip, not only in length, but in thickness too! Eventually, the growth stops as the warmth begins to fade. Before your erection can soften, you take a good measure of it and find out that it <b>has doubled in length and its girth has increased by half of your previous thickness!</b>");
+				output(", grab your rock hard dick and give it a few languid strokes. It fills with blood as it grows within your grip, not only in length but in thickness too! Eventually, the growth stops as the warmth begins to fade. Before your erection can soften, you take a good measure of it and find out that it <b>has doubled in length and its girth has increased by half of your previous thickness!</b>");
 				
 				//set length depending on perks
 				if (target.hasPerk("Hung")) target.cocks[randomCockIndex].cLengthRaw *= 2.2;
@@ -343,10 +343,10 @@ package classes.Items.Miscellaneous {
 			var validCockIndexes:Array = _getCocksBelowLength(target, 30);
 			var randomCockIndex:int = validCockIndexes[rand(validCockIndexes.length - 1)];
 			
-			output("\n\nYou can feel the famous warmth of Virection spreading throughout your groin, slowly focusing on your [pc.cock " + randomCockIndex + "]. The temperature is not the only thing rising though, as");
+			output("\n\nYou can feel the famous warmth of Virection spreading throughout your groin, slowly focusing on your [pc.cock " + randomCockIndex + "]. Your temperature is not the only thing rising, as");
 			if (target.cocks.length == 1) output(" your dick begins");
 			else output(" all of your dicks begin");
-			output(" to throb with lust. You can’t help but rub your unusually hot dick");
+			output(" to harden and throb with lust. You can’t help but rub your unusually hot dick");
 			if(target.hasLowerGarment()) {
 				output(" through the");
 				if (target.hasArmor()) output(" material of your [pc.armor]");
@@ -393,7 +393,7 @@ package classes.Items.Miscellaneous {
 			output(" to take a closer look down there while your cock keeps getting hotter. Taking a deep breath, you look down and, while the changes are barely visible to the eye, you can see that it's slowly engorging and becoming girthier.");
 			output(" As the heat dissipates, you find yourself tempted to touch it. Carefully, you slowly pass your fingers over the shaft, before taking full hold of your [pc.cock " + randomCockIndex + "].");
 			
-			if(target.cocks[randomCockIndex].thickness() < 7) output(" Your hand easily wraps around it and you confirmt that <b>it is definitely thicker than before.</b>");
+			if(target.cocks[randomCockIndex].thickness() < 7) output(" Your hand easily wraps around it and you confirm that <b>it is definitely thicker than before.</b>");
 			else if(target.cocks[randomCockIndex].thickness() >= 7 && target.cocks[randomCockIndex].thickness() < 13) output(" You need both of your hands to fully envelop its girth and after a few strokes, <b>you confirm that it's even thicker than before.</b>");
 			else output(" Even with both your hands, you can't fully encompass its monstrous girth. <b>You can hardly believe it, but it's even thicker than before!</b>");
 		}
